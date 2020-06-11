@@ -10,8 +10,8 @@ int main() {
 	p = arr;
 	cnt = 0;
 	for (i = 0; i < MAX; i++) {
-		for (j = i; j > -1; j--) {
-			*(*(p + i) + j) = ++cnt;
+		for (j = 0; j < i + 1; j++) {
+			*(*(p + i) + i - j) = ++cnt;
 		}
 	}
 

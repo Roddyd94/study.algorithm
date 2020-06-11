@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX 17
+#define MAX 5
 
 int main() {
 	int arr[MAX][MAX] = { 0 };

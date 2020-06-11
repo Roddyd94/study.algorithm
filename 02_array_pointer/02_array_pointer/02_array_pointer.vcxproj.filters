@@ -42,5 +42,8 @@
     <ClCompile Include="10_vacant_triangle_right.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="05-2_right_triangle_left_reverse.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
