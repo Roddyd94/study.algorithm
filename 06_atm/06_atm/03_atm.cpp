@@ -17,10 +17,6 @@ int main(void)
 	return 0;
 }
 
-void show_menu(void)
-{
-}
-
 void Proc_info() {
 	fprintf(stdout, "이 프로그램은 [은행관리프로그램]입니다. 입금 / 출금 / 잔액조회 가능\n");
 }
