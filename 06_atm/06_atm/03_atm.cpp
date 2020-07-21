@@ -7,8 +7,8 @@
 void Proc_info();
 void Menu_show();
 void MainLoop();
-void Menu_select(char select);
-void Proc_end();
+int Menu_select(char select);
+int Proc_end();
 
 int main(void)
 {
@@ -35,15 +35,16 @@ void Menu_show(void) {
 
 void MainLoop() {
 	char buf = '\0';
-	while (1) {
+	int con = 1;
+	while (con) {
 		Menu_show();
 		fscanf_s(stdin, "%c", &buf, 1);
 		getchar();
-		Menu_select(buf);
+		con = Menu_select(buf);
 	}
 }
 
-void Menu_select(char select) {
+int Menu_select(char select) {
 	switch (select) {
 	case '1':
 		fprintf(stdout, "입금하기\n");
@@ -56,13 +57,13 @@ void Menu_select(char select) {
 		break;
 	case '4':
 		fprintf(stdout, "종료하기\n");
-		Proc_end();
+		return Proc_end();
 		break;
 	default:
 		;
 	}
 }
 
-void Proc_end() {
-	exit(0);
+int Proc_end() {
+	return 0;
 }
