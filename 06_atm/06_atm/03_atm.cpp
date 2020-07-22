@@ -1,7 +1,6 @@
 #ifndef __STDIO_H__
 #define __STDIO_H__ 1
 #include <stdio.h>
-#include <Windows.h>
 #endif
 
 void Proc_info();
