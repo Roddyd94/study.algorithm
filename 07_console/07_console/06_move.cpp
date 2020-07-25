@@ -100,12 +100,12 @@ void set_team(struct unit** players) {
 	struct unit* teams = NULL;
 	static char number_of_team = 0;
 	do {
-		printf("팀 수를 정하세요. (최대 12) ");
+		printf("팀 수를 정하세요. (최대 10) ");
 		scanf_s("%d", &number_of_team);
 		team_num = number_of_team;
 		teams = (struct unit*)calloc(number_of_team, sizeof(struct unit));
 		*players = teams;
-	} while (number_of_team < 2 && number_of_team < 13);
+	} while (number_of_team < 2 && number_of_team < 11);
 
 	for (char i = 0; i < number_of_team; i++) {
 		char team_selected = 0;
