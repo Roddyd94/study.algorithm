@@ -35,11 +35,13 @@ void set_team(struct unit** players);
 void set_unit(struct unit* players);
 char move_cursor();
 void move_unit(struct unit* _unit, char dir);
+void view_cursor(char state);
 
 int main(void) {
 	srand((unsigned int)time(NULL));
 	struct unit* teams = NULL;
 
+	view_cursor(0);
 	set_window_size(window_col_size = 100, window_line_size = 40);
 	set_team(&teams);
 	set_unit(teams);
@@ -247,4 +249,14 @@ void move_unit(struct unit* _unit, char dir) {
 
 	set_color(_unit->team);
 	printf("%c",_unit->unit_type);
+}
+
+void view_cursor(char state)
+{
+	HANDLE hConsole;
+	CONSOLE_CURSOR_INFO ConsoleCursor;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	ConsoleCursor.bVisible = state;
+	ConsoleCursor.dwSize = 2;
+	SetConsoleCursorInfo(hConsole, &ConsoleCursor);
 }
